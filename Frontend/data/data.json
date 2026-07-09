@@ -1,0 +1,32 @@
+{
+  "name": "Iqra Nisar",
+  "title": "Frontend Developer",
+  "bio": "Passionate Web Developer",
+  "image": "images/image (1).webp"
+}
+[
+  {
+    "name": "HTML",
+    "percentage": 90
+  },
+  {
+    "name": "CSS",
+    "percentage": 70
+  },
+  {
+    "name": "JavaScript",
+    "percentage": 50
+  },
+  {
+    "name": "BootStrap",
+    "percentage": 70
+  },
+{
+  "name": "python",
+  "percentage": 65
+},
+{
+  "name": "React",
+  "percentage": 60
+}
+]
