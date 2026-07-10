@@ -8,9 +8,9 @@ function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/projects")
+    fetch("/data.json")
       .then((res) => res.json())
-      .then((data) => setProjects(data))
+      .then((data) => setProjects(data.projects))
       .catch((err) => console.error(err));
   }, []);
 

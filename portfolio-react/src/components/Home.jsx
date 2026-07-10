@@ -7,13 +7,13 @@ function Home() {
 
   // Fetch profile from backend
   useEffect(() => {
-    fetch("http://localhost:3000/api/profile")
+    fetch("/data.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setProfile(data);
+        setProfile(data.profile);
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => console.error( error));
   }, []);
 
   // Typed.js animation

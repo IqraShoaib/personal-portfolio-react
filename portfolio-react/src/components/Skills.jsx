@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
 function Skills() {
-  const [skills, setSkills] = useState({
-  technical: [],
-  professional: [],
-});
-
+  const [technicalSkills, setTechnicalSkills] = useState([]);
+  const [professionalSkills, setProfessionalSkills] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/skills")
-      .then((res) => res.json())
-      .then((data) => setSkills(data))
-      .catch((err) => console.error(err));
-  }, []);
+  fetch("/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      setTechnicalSkills(data.skills.technical);
+      setProfessionalSkills(data.skills.professional);
+    })
+    .catch((error) => console.error(error));
+}, []);
 
   return (
     <>
@@ -26,7 +26,7 @@ function Skills() {
   <h1 className="heading1">Technical Skills</h1>
 
   <div className="Technical-bars">
-    {skills.technical.map((skill) => (
+   {technicalSkills.map((skill) => (
       <div className="bar" key={skill.id}>
         <i
           style={{ color: skill.color }}
@@ -53,7 +53,7 @@ function Skills() {
           <h1 className="heading1">Professional Skills</h1>
 
           <div className="radial-bars">
-            {skills.professional.map((skill) => (
+            {professionalSkills.map((skill) => (
               <div className="radial-bar" key={skill.id}>
                 <svg viewBox="0 0 200 200">
                   <circle

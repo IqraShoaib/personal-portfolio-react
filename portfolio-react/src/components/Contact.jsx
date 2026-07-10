@@ -4,11 +4,10 @@ function Contact() {
   const [contact, setContact] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/contact")
+    fetch("/data.json")
       .then((response) => response.json())
       .then((data) => {
-  console.log(data);
-  setContact(data);
+  setContact(data.contact);
 })
       .catch((error) => console.error("Error:", error));
   }, []);
