@@ -6,13 +6,18 @@
   import Projects from "./components/Projects";
   import Articles from "./components/Articles";
   import Contact from "./components/Contact";
-import Testimonials from "./components/Testimonials";
+  import Testimonials from "./components/Testimonials";
+  import { motion, useScroll } from "framer-motion";
 
 
   function App() {
+    const { scrollYProgress } = useScroll();
     return (  
     <>
-     
+     <motion.div
+  className="progress-bar"
+  style={{ scaleX: scrollYProgress }}
+/>
     <Navbar />
     <Home />
     <About /> 

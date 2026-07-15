@@ -1,6 +1,13 @@
+import { motion } from "framer-motion";
 function About() {
   return (
-    <section className="about" id="about">
+   <motion.section
+  className="about"
+  id="about"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8 }}
+>
     <div className="about" img>
       <img 
       src="images/profile.webp" alt="Iqra's profile" loading="lazy" width={500} height={500} />
@@ -26,7 +33,7 @@ function About() {
       </p>
       <a href="#" className="btn-box">More About Me</a>
     </div>
-  </section>
+  </motion.section>
   );
 }
 

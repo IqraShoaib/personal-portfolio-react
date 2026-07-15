@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Typed from "typed.js";
-
+import { motion } from "framer-motion";
 function Home() {
   const [profile, setProfile] = useState(null);
   const designationRef = useRef(null);
@@ -34,11 +34,30 @@ function Home() {
   }, []);
 
   if (!profile) {
-    return <h2>Loading...</h2>;
-  }
+  return (
+    <div className="loader-container">
+      <motion.div
+        className="loader"
+        animate={{ rotate: 360 }}
+        transition={{
+          repeat: Infinity,
+          duration: 1,
+          ease: "linear",
+        }}
+      />
+      <p>Loading...</p>
+    </div>
+  );
+}
 
   return (
-    <section className="home" id="home">
+   <motion.section
+  className="home"
+  id="home"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8 }}
+>
       <div className="home-content">
         <h3>Hello, It's Me</h3>
 
@@ -51,7 +70,13 @@ function Home() {
         <p>{profile.bio}</p>
 
         <div tabIndex={0} className="home-sci">
-          <a
+          <motion.a
+          whileHover={{
+        scale: 1.08
+    }}
+    whileTap={{
+        scale: 0.95
+    }}
             href="https://www.linkedin.com/in/iqra-nisar-93656b221"
             aria-label="Linkedin-profile"
             target="_blank"
@@ -59,9 +84,15 @@ function Home() {
             style={{ ["--i"]: 8 }}
           >
             <i className="bx bxl-linkedin"></i>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+          whileHover={{
+        scale: 1.08
+    }}
+    whileTap={{
+        scale: 0.95
+    }}
             href="https://github.com/IqraShoaib"
             aria-label="github-profile"
             target="_blank"
@@ -69,10 +100,16 @@ function Home() {
             style={{ ["--i"]: 9 }}
           >
             <i className="bx bxl-github"></i>
-          </a>
+          </motion.a>
         </div>
 
-        <a
+        <motion.a
+        whileHover={{
+        scale: 1.08
+    }}
+    whileTap={{
+        scale: 0.95
+    }}
           href="/resume.pdf"
           aria-label="MY Resume"
           className="btn-box1"
@@ -80,12 +117,9 @@ function Home() {
           rel="noopener noreferrer"
         >
           Download CV
-        </a>
+        </motion.a>
       </div>
-
-      
-     
-    </section>
+    </motion.section>
   );
 }
 

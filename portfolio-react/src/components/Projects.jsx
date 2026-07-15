@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -41,14 +42,27 @@ function Projects() {
   });
 
   return (
-    <section id="project">
-
-      <h2>
+    
+   <motion.section
+  id="project"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+    
+      <motion.h2
+  initial={{ opacity: 0, y: -20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+>
         Latest <span>Projects</span>
-      </h2>
+      </motion.h2 >
+      
 
       {/* Search */}
-
+<div className="input">
       <input
         type="text"
         placeholder="Search Project..."
@@ -57,10 +71,17 @@ function Projects() {
         onChange={(e) => setSearch(e.target.value)}
         className="search-box"
       />
+      </div>
 
       {/* Category Filter */}
 
-      <div className="filters">
+      <motion.div
+  className="filters"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.3 }}
+>
 
         <button
           className={category === "All" ? "active" : ""}
@@ -110,11 +131,15 @@ function Projects() {
           Other
         </button>
 
-      </div>
+      </motion.div>
 
       {/* Technology Filter */}
 
-      <select
+      <motion.select
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.4 }}
         value={technology}
         onChange={(e) => setTechnology(e.target.value)}
       >
@@ -123,16 +148,24 @@ function Projects() {
             {tech}
           </option>
         ))}
-      </select>
+      </motion.select>
 
      <div className="projects-container">
   {filteredProjects.length > 0 ? (
     filteredProjects.map((project) => (
-      <div
-        key={project.id}
-        className="project-card"
-        onClick={() => setSelectedProject(project)}
-      >
+      <motion.div
+  key={project.id}
+  className="project-card"
+  onClick={() => setSelectedProject(project)}
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  whileHover={{
+    scale: 1.03,
+    y: -8
+  }}
+>
         <img
           src={project.image}
           alt={project.name}
@@ -154,7 +187,9 @@ function Projects() {
           </p>
 
           <div className="buttons">
-            <a
+            <motion.a
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
@@ -162,9 +197,11 @@ function Projects() {
               onClick={(e) => e.stopPropagation()}
             >
               Live Demo
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -172,10 +209,10 @@ function Projects() {
               onClick={(e) => e.stopPropagation()}
             >
               GitHub
-            </a>
+            </motion.a>
           </div>
         </div>
-      </div>
+      </motion.div>
     ))
   ) : (
     <h2>No Projects Found</h2>
@@ -185,14 +222,22 @@ function Projects() {
 {/* Modal */}
 
 {selectedProject && (
-  <div
-    className="modal"
-    onClick={() => setSelectedProject(null)}
-  >
-    <div
-      className="modal-content"
-      onClick={(e) => e.stopPropagation()}
-    >
+  <motion.div
+  className="modal"
+  onClick={() => setSelectedProject(null)}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+>
+   
+    <motion.div
+  className="modal-content"
+  onClick={(e) => e.stopPropagation()}
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.3 }}
+>
+     
       <span
         className="close"
         onClick={() => setSelectedProject(null)}
@@ -237,7 +282,9 @@ function Projects() {
 
           <div className="buttons">
 
-            <a
+            <motion.a
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
               href={selectedProject.demo}
               aria-label="Live Demo"
               target="_blank"
@@ -245,9 +292,11 @@ function Projects() {
               className="demo-btn"
             >
               Live Demo
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
               href={selectedProject.github}
               aria-label="github"
               target="_blank"
@@ -255,20 +304,17 @@ function Projects() {
               className="github-btn"
             >
               GitHub
-            </a>
+            </motion.a>
 
           </div>
 
         </div>
 
       </div>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 )}
-
-    
-
-    </section>
+    </motion.section>
   );
 }
 

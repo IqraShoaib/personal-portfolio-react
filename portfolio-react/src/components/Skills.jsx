@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 function Skills() {
   const [technicalSkills, setTechnicalSkills] = useState([]);
@@ -19,13 +20,32 @@ function Skills() {
         My <span>Skills</span>
       </h1>
 
-      <section className="skills-container">
+      <motion.section
+       className="skills-container"
+       initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
         {/* Technical Skills */}
 
-       <div className="container1" id="skills">
+       <motion.div
+        className="container1" 
+        id="skills"
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+      >
   <h1 className="heading1">Technical Skills</h1>
 
-  <div className="Technical-bars">
+  <motion.div 
+  className="Technical-bars"
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  >
    {technicalSkills.map((skill) => (
       <div className="bar" key={skill.id}>
         <i
@@ -38,23 +58,41 @@ function Skills() {
         </div>
 
         <div className={`progress-line ${skill.class}`}>
-          <span style={{ width: `${skill.percentage}%` }}></span>
+          <motion.span
+  initial={{ width: 0 }}
+  whileInView={{ width: `${skill.percentage}%` }}
+  viewport={{ once: true }}
+  transition={{ duration: 1 }}
+/>
         </div>
 
         <div>{skill.percentage}%</div>
       </div>
     ))}
-  </div>
-</div>
+  </motion.div>
+</motion.div>
 
         {/* Professional Skills */}
 
         <div className="container1">
           <h1 className="heading1">Professional Skills</h1>
 
-          <div className="radial-bars">
+          <motion.div 
+          className="radial-bars"
+          
+  initial={{ opacity: 0, scale: 0.8 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}>
             {professionalSkills.map((skill) => (
-              <div className="radial-bar" key={skill.id}>
+              <motion.div
+    className="radial-bar"
+    key={skill.id}
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
                 <svg viewBox="0 0 200 200">
                   <circle
                     className="progress-bar"
@@ -78,11 +116,11 @@ function Skills() {
                 <div className="text">
                   {skill.name}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

@@ -1,7 +1,19 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 function Contact() {
   const [contact, setContact] = useState(null);
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
+const [errors, setErrors] = useState({});
+const [successMessage, setSuccessMessage] = useState("");
+const [errorMessage, setErrorMessage] = useState("");
+const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch("/data.json")
@@ -15,13 +27,105 @@ function Contact() {
   if (!contact) {
     return <h2>Loading...</h2>;
   }
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+
+  setErrors({
+    ...errors,
+    [e.target.name]: "",
+  });
+};
+
+const validateForm = () => {
+  let newErrors = {};
+
+  if (!formData.name.trim()) {
+    newErrors.name = "Name is required";
+  }
+
+  if (!formData.email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
+  ) {
+    newErrors.email = "Invalid email";
+  }
+
+  if (!formData.subject.trim()) {
+    newErrors.subject = "Subject is required";
+  }
+
+  if (!formData.message.trim()) {
+    newErrors.message = "Message is required";
+  } else if (formData.message.length < 10) {
+    newErrors.message = "Message should contain at least 10 characters";
+  }
+
+  setErrors(newErrors);
+
+  return Object.keys(newErrors).length === 0;
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log("Submit clicked");
+console.log(formData);
+
+  setSuccessMessage("");
+  setErrorMessage("");
+
+  if (!validateForm()) return;
+
+  setLoading(true);
+
+  setTimeout(() => {
+    try {
+      setSuccessMessage("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
+    } catch {
+      setErrorMessage("Something went wrong.");
+    }
+
+    setLoading(false);
+  }, 2000);
+};
 
   return (
-    <section className="contact" id="contact">
-      <div className="contact-text">
-        <h2>
-          Contact <span>Me</span>
-        </h2>
+   <motion.section
+  className="contact"
+  id="contact"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+      <motion.div
+  className="contact-text"
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+       <motion.h2
+  initial={{ opacity: 0, y: -20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+>
+        </motion.h2>
 
         <h4>Let's Work Together</h4>
 
@@ -48,77 +152,150 @@ function Contact() {
         </div>
 
         <div className="contact-icons">
-          <a
+          <motion.a
+  whileHover={{
+    scale: 1.2,
+    rotate: 10
+  }}
+  whileTap={{ scale: 0.9 }}
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="bx bxl-facebook-circle"></i>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+  whileHover={{
+    scale: 1.2,
+    rotate: 10
+  }}
+  whileTap={{ scale: 0.9 }}
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="bx bxl-instagram"></i>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+  whileHover={{
+    scale: 1.2,
+    rotate: 10
+  }}
+  whileTap={{ scale: 0.9 }}
             href="https://www.linkedin.com/in/iqra-nisar-93656b221"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="bx bxl-linkedin"></i>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+  whileHover={{
+    scale: 1.2,
+    rotate: 10
+  }}
+  whileTap={{ scale: 0.9 }}
             href="https://wa.me/923181388294"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="bx bxl-whatsapp"></i>
-          </a>
+          </motion.a>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="contact-form">
-        <form>
-          <input
-            type="text"
-            placeholder="Enter Your Name"
-            required
-          />
+      <motion.div
+  className="contact-form"
+  initial={{ opacity: 0, x: 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+        <form onSubmit={handleSubmit}>
+  <input
+  type="text"
+  name="name"
+  placeholder="Enter Your Name"
+  value={formData.name}
+  onChange={handleChange}
+/>
+
+{errors.name && <small className="error">{errors.name}</small>}
+
+<input
+  type="email"
+  name="email"
+  placeholder="Enter Your Email"
+  value={formData.email}
+  onChange={handleChange}
+/>
+
+{errors.email && <small className="error">{errors.email}</small>}
 
           <input
-            type="email"
-            placeholder="Enter Your Email"
-            required
-          />
+  type="text"
+  name="subject"
+  placeholder="Enter Your Subject"
+  value={formData.subject}
+  onChange={handleChange}
+/>
 
-          <input
-            type="text"
-            placeholder="Enter Your Subject"
-            required
-          />
+{errors.subject && <small className="error">{errors.subject}</small>}
+
 
           <textarea
-            cols="40"
-            rows="10"
-            placeholder="Enter Your Message"
-            required
-          ></textarea>
+  name="message"
+  cols="40"
+  rows="10"
+  placeholder="Enter Your Message"
+  value={formData.message}
+  onChange={handleChange}
+></textarea>
 
-          <input
-            type="submit"
-            value="Submit"
-            className="send"
-          />
+{errors.message && (
+  <small className="error">{errors.message}</small>
+)}
+ <motion.button
+  type="submit"
+  className="send"
+  disabled={loading}
+  animate={
+    loading
+      ? { scale: [1, 1.05, 1] }
+      : {}
+  }
+  transition={{
+    duration: 0.8,
+    repeat: loading ? Infinity : 0
+  }}
+>
+  {loading ? "Sending..." : "Submit"}
+</motion.button>
 
-          <p id="successMessage"></p>
+      {successMessage && (
+  <motion.p
+    className="success"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+  >
+    {successMessage}
+  </motion.p>
+)}
+
+{errorMessage && (
+  <motion.p
+    className="error"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+  >
+    {errorMessage}
+  </motion.p>
+)}
         </form>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 
