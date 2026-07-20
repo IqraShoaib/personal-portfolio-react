@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function Contact() {
+  
   const [contact, setContact] = useState(null);
   const [formData, setFormData] = useState({
   name: "",
@@ -119,12 +120,14 @@ console.log(formData);
   viewport={{ once: true }}
   transition={{ duration: 0.8 }}
 >
+
        <motion.h2
   initial={{ opacity: 0, y: -20 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
   transition={{ duration: 0.6 }}
 >
+  Contact <span>Me </span>
         </motion.h2>
 
         <h4>Let's Work Together</h4>

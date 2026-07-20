@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+
 function About() {
+  const [showModal, setShowModal] = useState(false);
   return (
+    <>
    <motion.section
+
   className="about"
   id="about"
   initial={{ opacity: 0 }}
@@ -31,9 +36,85 @@ function About() {
         staying up-to-date with current design trends
         and leveraging my creativity to produce visually appealing.
       </p>
-      <a href="#" className="btn-box">More About Me</a>
+      <button
+  className="btn-box"
+  onClick={() => setShowModal(true)}
+>
+  More About Me
+</button>
     </div>
   </motion.section>
+  {showModal && (
+  <div className="modal-overlay" onClick={() => setShowModal(false)}>
+    <motion.div
+  className="about-modal"
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  exit={{ scale: 0.8, opacity: 0 }}
+  transition={{ duration: 0.3 }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="close-btn"
+        onClick={() => setShowModal(false)}
+      >
+        ×
+      </button>
+
+      <h2>More About Me</h2>
+
+      <p>
+        Hi! I'm <strong>Iqra Nisar</strong>, a passionate Frontend Developer who
+        enjoys creating responsive, modern, and user-friendly web applications.
+        I love transforming ideas into beautiful digital experiences using
+        React, JavaScript, HTML, and CSS.
+      </p>
+
+      <h3>Education</h3>
+      <p>
+        Bachelor's in Business Analytics with a strong interest in web
+        technologies and user interface design.
+      </p>
+
+      <h3>Technical Skills</h3>
+
+      <ul>
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript (ES6+)</li>
+        <li>React.js</li>
+        <li>Responsive Web Design</li>
+        <li>Bootstrap</li>
+        <li>Git & GitHub</li>
+        <li>REST APIs</li>
+      </ul>
+
+      <h3>Experience</h3>
+
+      <p>
+        Completed a Frontend Development internship where I developed modern
+        React applications, optimized website performance, implemented
+        accessibility improvements, and deployed projects using Vercel.
+      </p>
+
+      <h3>What I Enjoy</h3>
+
+      <p>
+        ✔ Building responsive websites<br />
+        ✔ Learning new technologies<br />
+        ✔ Creating clean UI/UX<br />
+        ✔ Solving real-world problems with code
+      </p>
+
+      <h3>Career Goal</h3>
+
+      <p>
+        My goal is to become a professional Frontend Engineer and contribute to
+        innovative software projects while continuously improving my skills.
+      </p>
+    </motion.div>
+  </div>
+)}
+  </>
   );
 }
 

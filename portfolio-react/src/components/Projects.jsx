@@ -62,16 +62,36 @@ function Projects() {
       
 
       {/* Search */}
-<div className="input">
-      <input
-        type="text"
-        placeholder="Search Project..."
-        aria-label="Search-Box"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="search-box"
-      />
-      </div>
+{/* Search + Technology Filter */}
+
+<div className="search-container">
+
+  <input
+    type="text"
+    placeholder="Search Project..."
+    aria-label="Search-Box"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    className="search-box"
+  />
+
+  <motion.select
+    className="tech-select"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.4 }}
+    value={technology}
+    onChange={(e) => setTechnology(e.target.value)}
+  >
+    {technologies.map((tech) => (
+      <option key={tech} value={tech}>
+        {tech}
+      </option>
+    ))}
+  </motion.select>
+
+</div>
 
       {/* Category Filter */}
 
@@ -84,7 +104,7 @@ function Projects() {
 >
 
         <button
-          className={category === "All" ? "active" : ""}
+          className={`filter-btn ${category === "All" ? "active" : ""}`}
           onClick={() => setCategory("All")}
           aria-label="All"
         >
@@ -92,7 +112,7 @@ function Projects() {
         </button>
 
         <button
-          className={category === "Web Development" ? "active" : ""}
+         className={`filter-btn ${category === "Web Development" ? "active" : ""}`}
           onClick={() => setCategory("Web Development")}
           aria-label="Web Development"
         >
@@ -100,7 +120,7 @@ function Projects() {
         </button>
 
         <button
-          className={category === "Mobile Development" ? "active" : ""}
+          className={`filter-btn ${category === "Mobile Development" ? "active" : ""}`}
           onClick={() => setCategory("Mobile Development")}
           aria-label="Mobile development"
         >
@@ -108,7 +128,7 @@ function Projects() {
         </button>
 
         <button
-          className={category === "UI/UX" ? "active" : ""}
+          className={`filter-btn ${category === "UI/UX" ? "active" : ""}`}
           onClick={() => setCategory("UI/UX")}
           aria-label="UI/UX"
         >
@@ -116,7 +136,7 @@ function Projects() {
         </button>
 
         <button
-          className={category === "Data Analyst" ? "active" : ""}
+          className={`filter-btn ${category === "Data Analyst" ? "active" : ""}`}
           onClick={() => setCategory("Data Analyst")}
           aria-label="Data Analyst"
         >
@@ -124,7 +144,7 @@ function Projects() {
         </button>
 
         <button
-          className={category === "Other" ? "active" : ""}
+         className={`filter-btn ${category === "Other" ? "active" : ""}`}
           onClick={() => setCategory("Other")}
           aria-label="Other"
         >
@@ -135,20 +155,7 @@ function Projects() {
 
       {/* Technology Filter */}
 
-      <motion.select
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.4 }}
-        value={technology}
-        onChange={(e) => setTechnology(e.target.value)}
-      >
-        {technologies.map((tech) => (
-          <option key={tech} value={tech}>
-            {tech}
-          </option>
-        ))}
-      </motion.select>
+    
 
      <div className="projects-container">
   {filteredProjects.length > 0 ? (
@@ -223,94 +230,51 @@ function Projects() {
 
 {selectedProject && (
   <motion.div
-  className="modal"
-  onClick={() => setSelectedProject(null)}
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  exit={{ opacity: 0 }}
->
-   
+    className="modal"
+    onClick={() => setSelectedProject(null)}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+  >
     <motion.div
-  className="modal-content"
-  onClick={(e) => e.stopPropagation()}
-  initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.3 }}
->
-     
-      <span
+      className="modal-content"
+      onClick={(e) => e.stopPropagation()}
+      initial={{ scale: 0.8 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <button
         className="close"
         onClick={() => setSelectedProject(null)}
       >
         ×
-      </span>
+      </button>
 
       <h2>{selectedProject.name}</h2>
 
-      <div className="project-details">
+      <img
+        src={selectedProject.image}
+        alt={selectedProject.name}
+      />
 
-        <img
-          src={selectedProject.image}
-          alt={selectedProject.name}
-        />
+      <p>{selectedProject.description}</p>
 
-        <div className="project-info">
+      <p>
+        <strong>Category:</strong> {selectedProject.category}
+      </p>
 
-          <h3>Description</h3>
+      <h3>Technologies</h3>
+      <ul>
+        {(selectedProject.technology || []).map((tech, index) => (
+          <li key={index}>{tech}</li>
+        ))}
+      </ul>
 
-          <p>{selectedProject.description}</p>
-
-          <h3>Category</h3>
-
-          <p>{selectedProject.category}</p>
-
-          <h3>Technologies</h3>
-
-<ul>
-  {selectedProject.technology.map((tech,index)=>(
-    <li key={index}>{tech}</li>
-  ))}
-</ul>
-
-<h3>Features</h3>
-
-<ul>
-  {selectedProject.features.map((feature,index)=>(
-    <li key={index}>{feature}</li>
-  ))}
-</ul>
-
-          <div className="buttons">
-
-            <motion.a
-  whileHover={{ scale: 1.08 }}
-  whileTap={{ scale: 0.95 }}
-              href={selectedProject.demo}
-              aria-label="Live Demo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="demo-btn"
-            >
-              Live Demo
-            </motion.a>
-
-            <motion.a
-  whileHover={{ scale: 1.08 }}
-  whileTap={{ scale: 0.95 }}
-              href={selectedProject.github}
-              aria-label="github"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="github-btn"
-            >
-              GitHub
-            </motion.a>
-
-          </div>
-
-        </div>
-
-      </div>
+      <h3>Features</h3>
+      <ul>
+        {(selectedProject.features || []).map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
     </motion.div>
   </motion.div>
 )}
