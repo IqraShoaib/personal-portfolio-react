@@ -18,20 +18,24 @@ function Home() {
 
   // Typed.js animation
   useEffect(() => {
-    if (!designationRef.current) return;
+  console.log("Typed effect started");
+  console.log("Profile:", profile);
+  console.log("Span:", designationRef.current);
 
-    const typed = new Typed(designationRef.current, {
-      strings: ["Web Developer!", "Frontend Developer!"],
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 1000,
-      loop: true,
-    });
+  if (!profile || !designationRef.current) return;
 
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  const typed = new Typed(designationRef.current, {
+    strings: ["Web Developer!", "Frontend Developer!"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true,
+  });
+
+  console.log("Typed initialized");
+
+  return () => typed.destroy();
+}, [profile]);
 
   if (!profile) {
   return (

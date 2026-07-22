@@ -39,6 +39,22 @@
       "icon": "bxl-react",
       "color": "#61dafb",
       "class": "react"
+    },
+    {
+      "id": 5,
+      "name": "Python",
+      "percentage": 85,
+      "icon": "bxl-python",
+      "color": "#3776ab",
+      "class": "python"
+    },
+    {
+      "id": 6,
+      "name": "Bootstrap",
+      "percentage": 70,
+      "icon": "bxl-bootstrap",
+      "color": "#5849c0",
+      "class": "bootstrap"
     }
   ],
 

@@ -70,13 +70,13 @@ function About() {
         React, JavaScript, HTML, and CSS.
       </p>
 
-      <h3>Education</h3>
+      <h3>Education:</h3>
       <p>
-        Bachelor's in Business Analytics with a strong interest in web
+        Bachelor's in Computer System Engineering with a strong interest in web
         technologies and user interface design.
       </p>
 
-      <h3>Technical Skills</h3>
+      <h3>Technical Skills:</h3>
 
       <ul>
         <li>HTML5 & CSS3</li>
@@ -87,16 +87,32 @@ function About() {
         <li>Git & GitHub</li>
         <li>REST APIs</li>
       </ul>
+      <h3>Courses:</h3>
+      <ul><li><h5>Pakistan Engineering Council
+       <h6>(In Collaboration with PakAngels, iCode guru and Aspire Pakistan)</h6> </h5></li>
+     
 
-      <h3>Experience</h3>
+<ul><li><p> I have successfully completed the course on Generative Artificial Intelligence. This program has enhanced my understanding of AI models, prompt engineering, and real-world applications of generative technologies. Through hands-on exercises and projects, I gained practical experience in leveraging AI tools for creative problem-solving, content generation, and automation. This learning journey has strengthened my technical and analytical skills, and I look forward to applying this knowledge in future innovative projects.</p></li></ul>
+</ul>
 
+      <h3>Experience:</h3>
+
+     <h4>Internships:</h4>
+     <ul>
+     <li> <h5>Pakistan International Airlines</h5></li>
+      <p>Worked on ASP .Net C# HTML CSS Bootstrap and SQL server. </p>
+<li><h5>Prodigy Info Tech </h5></li>
       <p>
-        Completed a Frontend Development internship where I developed modern
-        React applications, optimized website performance, implemented
-        accessibility improvements, and deployed projects using Vercel.
+        Completed a Web Development internship where I developed modern
+        Applications:<ul><li>Responsive Landing Page </li>
+        <li>Stopwatch </li>
+        <li>Tic-Tac-Toe Game </li>
+        <li>weather application </li>
+        <li>Personal Portfolio </li> </ul>
       </p>
-
-      <h3>What I Enjoy</h3>
+      
+</ul>
+      <h3>What I Enjoy:</h3>
 
       <p>
         ✔ Building responsive websites<br />
@@ -105,7 +121,7 @@ function About() {
         ✔ Solving real-world problems with code
       </p>
 
-      <h3>Career Goal</h3>
+      <h3>Career Goal:</h3>
 
       <p>
         My goal is to become a professional Frontend Engineer and contribute to
