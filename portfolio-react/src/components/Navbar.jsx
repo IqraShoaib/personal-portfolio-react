@@ -36,12 +36,15 @@ function Navbar() {
         Iqra Nisar
       </a>
 
-      <div
-        className="hamburger"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        ☰
-      </div>
+      <button
+  className="hamburger"
+  onClick={() => {
+    alert("clicked");
+    setMenuOpen(prev => !prev);
+  }}
+>
+  ☰
+</button>
 
       <nav className={menuOpen ? "nav-links active" : "nav-links"}>
         <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
