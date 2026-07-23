@@ -283,8 +283,8 @@ header{
         0 0 25px #067baa;
     }
     .btn-box1{
-        margin-left: 30px;
-        display: inline-block;
+        
+         display: inline-block;
         padding: 12px 28px;
         background:#0e506a;
         border-radius: 40px;
@@ -299,6 +299,7 @@ header{
         box-shadow: 0 0 5px #067baa,
         0 0 25px #067baa;
     }
+    
     .btn-box:hover{
         box-shadow: 0 0 5px #059ad5,
         0 0 25px #059ad5, 0 0 50px #059ad5,
@@ -598,8 +599,8 @@ transform:scale(1);
         flex-wrap: wrap;
     }
     .container1{
-        width: 30%;
-    }
+    width:45%;
+}
     .skills-container{
         display: flex;
         justify-content: space-around;
@@ -616,9 +617,7 @@ transform:scale(1);
     .bar{
         font-size: 23px;
     }
-    .Technical-bars .bar{
-        margin-top: 40px 0;   
-    }
+
     .Technical-bars .bar:first-child{
         margin-top: 0;
     }
@@ -740,25 +739,26 @@ transform:scale(1);
         }
     }
     .radial-bars{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: flex-start;
-    }
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+    margin-top:40px;
+}
     .radial-bars .radial-bar{
-        width: 50%;
-        height: 170px;
-        margin-bottom: 10px;
-        position: relative;
-    }
+    width:100%;
+    height:220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
     .radial-bars .radial-bar svg{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-90deg);
-        width: 120px;
-        height: 160px;
+       width:170px;
+    height:170px;
     }
     .radial-bars .radial-bar .progress-bar{
         stroke-width: 10;
@@ -811,7 +811,8 @@ transform:scale(1);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 17px;
+        font-size: 24px;
+         font-weight:bold;
         font-display: 500;
         animation: showText 0.5s 1s linear forwards;
         opacity: 0;
