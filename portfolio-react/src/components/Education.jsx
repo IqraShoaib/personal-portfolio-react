@@ -112,6 +112,7 @@ Achievements:
 
       <button
         className="read"
+        aria-label="Learn more about this project"
         onClick={() => setSelectedEducation(item)}
       >
         Learn More

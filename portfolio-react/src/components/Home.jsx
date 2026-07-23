@@ -115,7 +115,7 @@ function Home() {
         scale: 0.95
     }}
           href="/resume.pdf"
-          aria-label="MY Resume"
+          aria-label="Download my resume"
           className="btn-box1"
           target="_blank"
           rel="noopener noreferrer"

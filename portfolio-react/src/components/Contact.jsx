@@ -106,38 +106,41 @@ function Contact() {
 
   return (
     <motion.section
-      className="contact"
-      id="contact"
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
+  className="contact-section"
+  id="contact"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+
+  <motion.h2
+    className="contact-heading"
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    Contact <span>Me</span>
+  </motion.h2>
+
+  <div className="contact">
+    <motion.div
+      className="contact-text"
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <motion.div
-        className="contact-text"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
 
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Contact <span>Me </span>
-        </motion.h2>
-
-        <h4>Let's Work Together</h4>
+        <h3>Let's Work Together</h3>
 
         <p>
           Hello everyone, I'm here and you can contact me through social
           media. I am always available to respond.
         </p>
 
-        <div className="contact-list">
+        < ul className="contact-list">
           <li>
             <i className="bx bx-send"></i>
             {contact.email}
@@ -152,34 +155,30 @@ function Contact() {
             <i className="bx bx-map"></i>
             {contact.location}
           </li>
-        </div>
+      
+      </ul>
+      
 
         <div className="contact-icons">
-          <motion.a
-            whileHover={{
-              scale: 1.2,
-              rotate: 10
-            }}
-            whileTap={{ scale: 0.9 }}
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="bx bxl-facebook-circle"></i>
-          </motion.a>
+          <a
+  href="https://facebook.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit my Facebook profile"
+  title="Facebook"
+>
+  <i className="bx bxl-facebook" aria-hidden="true"></i>
+</a>
 
-          <motion.a
-            whileHover={{
-              scale: 1.2,
-              rotate: 10
-            }}
-            whileTap={{ scale: 0.9 }}
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="bx bxl-instagram"></i>
-          </motion.a>
+          <a
+  href="https://instagram.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit my Instagram profile"
+  title="Instagram"
+>
+  <i className="bx bxl-instagram" aria-hidden="true"></i>
+</a>
 
           <motion.a
             whileHover={{
@@ -190,8 +189,9 @@ function Contact() {
             href="https://wa.me/923181388294?text=Hello%20Iqra,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
             target="_blank"
             rel="noopener noreferrer"
+             title="WhatsApp"
           >
-            <i className="bx bxl-whatsapp"></i>
+            <i className="bx bxl-whatsapp" aria-hidden="true"></i>
           </motion.a>
           <motion.a
             whileHover={{
@@ -202,8 +202,10 @@ function Contact() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=iqranisar096@gmail.com&su=Portfolio%20Inquiry&body=Hello%20Iqra,%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
             target="_blank"
             rel="noopener noreferrer"
+             aria-label="Send me an email"
+  title="Email"
           >
-            <i className="bx bxl-gmail"></i>
+            <i className="bx bxl-gmail" aria-hidden="true"></i>
           </motion.a>
         </div>
       </motion.div>
@@ -217,8 +219,10 @@ function Contact() {
         transition={{ duration: 0.8 }}
       >
         <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
+            id="name"
             name="name"
             placeholder="Enter Your Name"
             value={formData.name}
@@ -226,9 +230,11 @@ function Contact() {
           />
 
           {errors.name && <small className="error">{errors.name}</small>}
+          <label htmlFor="email">Email</label>
 
           <input
             type="email"
+            id="email"
             name="email"
             placeholder="Enter Your Email"
             value={formData.email}
@@ -236,9 +242,10 @@ function Contact() {
           />
 
           {errors.email && <small className="error">{errors.email}</small>}
-
+          <label htmlFor="subject">Subject</label>  
           <input
             type="text"
+            id="subject"
             name="subject"
             placeholder="Enter Your Subject"
             value={formData.subject}
@@ -246,9 +253,9 @@ function Contact() {
           />
 
           {errors.subject && <small className="error">{errors.subject}</small>}
-
-
+          <label htmlFor="message">Message</label>
           <textarea
+            id="message"
             name="message"
             cols="40"
             rows="10"
@@ -298,6 +305,7 @@ function Contact() {
           )}
         </form>
       </motion.div>
+      </div>
     </motion.section>
   );
 }

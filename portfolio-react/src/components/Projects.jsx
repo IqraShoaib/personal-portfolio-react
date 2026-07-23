@@ -44,6 +44,7 @@ function Projects() {
   return (
     
    <motion.section
+   className="projects-"
   id="project"
   initial={{ opacity: 0, y: 80 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -51,14 +52,15 @@ function Projects() {
   transition={{ duration: 0.8 }}
 >
     
-      <motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6 }}
->
-        Latest <span>Projects</span>
-      </motion.h2 >
+     <motion.h2
+    className="projects-heading"
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    Latest <span>Projects</span>
+  </motion.h2>
       
 
       {/* Search */}
@@ -74,7 +76,9 @@ function Projects() {
     onChange={(e) => setSearch(e.target.value)}
     className="search-box"
   />
-
+<label htmlFor="technology-filter" className="sr-only">
+  Filter projects by technology
+</label>
   <motion.select
     className="tech-select"
     initial={{ opacity: 0 }}

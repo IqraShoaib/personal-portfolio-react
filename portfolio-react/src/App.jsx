@@ -19,6 +19,8 @@
   style={{ scaleX: scrollYProgress }}
 />
     <Navbar />
+
+    <main>
     <Home />
     <About /> 
      <Education />
@@ -27,12 +29,19 @@
     <Testimonials />
    <Articles />
     <Contact />
-  
+  </main>
     
     <div className="last-text">
       <p>Developed By Iqra Nisar</p>
     </div>
-    <a href="#" className="top"><i className="bx bx-up-arrow-alt" /></a>
+    <a
+  href="#home"
+  className="top"
+  aria-label="Back to top"
+  title="Back to top"
+>
+  <i className="bx bx-up-arrow-alt" aria-hidden="true"></i>
+</a>
     </>
     );
     }
