@@ -48,15 +48,14 @@ function Skills() {
   >
    {technicalSkills.map((skill) => (
       <div className="bar" key={skill.id}>
+        <div className="skill-header">
         <i
           style={{ color: skill.color }}
           className={`bx ${skill.icon}`}
-        ></i>
-
-        <div className="info">
+        ></i> 
           <span>{skill.name}</span>
-        </div>
-
+          </div>
+       
         <div className={`progress-line ${skill.class}`}>
           <motion.span
   initial={{ width: 0 }}
@@ -65,7 +64,6 @@ function Skills() {
   transition={{ duration: 1 }}
 />
         </div>
-
         <div>{skill.percentage}%</div>
       </div>
     ))}
@@ -75,7 +73,7 @@ function Skills() {
         {/* Professional Skills */}
 
         <div className="container1">
-  <h2 className="heading1">Professional Skills</h2>
+  <h1 className="heading1">Professional Skills</h1>
 
   <motion.div
     className="radial-bars"

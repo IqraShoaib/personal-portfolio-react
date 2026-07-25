@@ -687,8 +687,10 @@ transform:scale(1);
         text-decoration-thickness: 5px;
         margin-bottom: 50px;
     }
+    
     .bar{
-        font-size: 23px;
+        font-size: 16px;
+        margin-bottom:20px;
     }
 
     .Technical-bars .bar:first-child{
@@ -715,7 +717,26 @@ transform:scale(1);
         animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
         transform: scaleX(0);
         transform-origin: left;
+        
     }
+    
+    .skill-header{
+    display:flex;
+    align-items:center;
+    gap:1px;
+    margin-bottom: 10px;
+
+}
+.skill-header i{
+    font-size:25px;
+}
+.skill-header span{
+    font-size:18px;
+    font-weight:600;
+    color:#fff;
+     animation: showText 0.5s 1s linear forwards;
+        opacity: 0;
+}
     @keyframes animate{
         100%{
         transform: scaleX(1);
@@ -793,6 +814,8 @@ transform:scale(1);
         animation: showText 0.5s 1.5s linear forwards;
         opacity: 0;
     }
+
+    
     @media screen and (max-width: 600px) {
         .nav.responsive {position: relative;}
         .nav.responsive a.icon {
@@ -857,6 +880,7 @@ transform:scale(1);
         stroke-linecap: round;
         animation: animate-bar 1s linear forwards;
     }
+    
     @media (max-width:768px){
 
 .skills-container{
