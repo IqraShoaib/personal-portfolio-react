@@ -15,6 +15,7 @@ function Articles() {
   transition={{ duration: 0.8 }}
 >
    <motion.h2
+   className="articles-heading"
   initial={{ opacity: 0, y: -20 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}

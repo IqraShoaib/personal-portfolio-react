@@ -9,13 +9,15 @@ function Testimonials() {
   transition={{ duration: 0.8 }}
 >
    <motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6 }}
->
-  My <span>Testimonials</span>
-</motion.h2>
+    className="testimonials-heading"
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    My <span>Testimonials</span>
+  </motion.h2>
+
     <div className="testimonial-container">
      <motion.div
   className="testimonial-card"

@@ -43,7 +43,7 @@
     {
       "id": 5,
       "name": "Python",
-      "percentage": 85,
+      "percentage": 65,
       "icon": "bxl-python",
       "color": "#3776ab",
       "class": "python"
