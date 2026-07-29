@@ -1366,7 +1366,7 @@ box-shadow: 0 0 5px #059ad5,
     font-size: 60px;
     font-weight: 700;
     color:#fff;
-    margin-bottom: 50px;2
+    margin-bottom: 50px;
 }
 .articles-heading span{
     color:#1aabe4;
@@ -1442,8 +1442,6 @@ box-shadow: 0 0 5px #059ad5,
     margin-top: 130px;
     padding: 80px 30px;
 }
-
-
 .contact-heading {
     text-align: center;
     font-size: 60px;
@@ -1507,7 +1505,7 @@ box-shadow: 0 0 5px #059ad5,
         animation-delay: calc(.2s * var(--1));
     }
     .contact-icons i:hover{
-        background:#078bbe ;
+        background:#078bbe;
         color: #000;
         box-shadow: 0 0 20px #059ad5;
     }
