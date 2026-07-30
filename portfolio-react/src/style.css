@@ -13,6 +13,11 @@
         transition: 0.3s;
         font-size: 14px;
     }
+    @media (max-width:768px){
+    body{
+        background:red !important;
+    }
+}
     @media (min-width: 768px) {
         body{
             font-size: 16px;
@@ -1473,6 +1478,47 @@ box-shadow: 0 0 5px #059ad5,
         padding-left: 30px;
         margin-top: 130px;
     }
+    @media(max-width:768px){
+
+.contact{
+
+grid-template-columns:1fr;
+
+padding:0;
+
+gap:40px;
+
+}
+
+.contact-text{
+
+text-align:center;
+
+}
+
+.contact-list{
+
+padding:0;
+
+}
+
+.contact-icons{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.contact-form form input,
+
+.contact-form form textarea{
+
+width:100%;
+
+}
+
+}
     .contact-section {
     margin-top: 130px;
     padding: 80px 30px;
