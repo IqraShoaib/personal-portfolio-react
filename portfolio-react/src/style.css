@@ -339,22 +339,7 @@ header{
         color:#0d2f3c;
         box-shadow: 0 0 20px #0e506a;
     }
-    .btn-box{
-        display: inline-block;
-        padding: 12px 28px;
-        background:#0e506a;
-        border-radius: 40px;
-        font-size: 16px;
-        color:#fff;
-        letter-spacing: 1px;
-        text-decoration: none;
-        font-weight: 600;
-        opacity: 0;
-        animation: slideTop 1s ease forwards;
-        animation-delay: 2s;
-        box-shadow: 0 0 5px #067baa,
-        0 0 25px #067baa;
-    }
+   
     .btn-box1{
         
          display: inline-block;
@@ -373,11 +358,7 @@ header{
         0 0 25px #067baa;
     }
     
-    .btn-box:hover{
-        box-shadow: 0 0 5px #059ad5,
-        0 0 25px #059ad5, 0 0 50px #059ad5,
-        0 0 100px #059ad5, 0 0 200px #059ad5;
-    }
+    
     .btn-box1:hover{
         box-shadow: 0 0 5px #059ad5,
         0 0 25px #059ad5, 0 0 50px #059ad5,
@@ -423,17 +404,34 @@ header{
         align-items: center;
         gap: 1rem;
     }
-    .about-img {
-        margin-top: 50px;
-    }
+    .about-img{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.about-img img{
+    width:100%;
+    max-width:500px;
+    height:auto;
+    border-radius:12px;
+    object-fit:cover;
+    display:block;
+}
+@media (max-width:768px){
+
     .about-img img{
-        padding-bottom: 20%;
-        max-width: 100%;
-        height: auto;
-        width: 100%;
-        border-radius: 8px;
-        display:block
+        max-width:300px;
     }
+
+}
+@media (max-width:480px){
+
+    .about-img img{
+        max-width:220px;
+    }
+
+}
     .about-text h2{
         font-size: 60px;
     }
@@ -456,25 +454,24 @@ header{
     .modal-overlay{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.6);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0,0,0,.7);
+    z-index: 1000;
 }
 
 .about-modal{
-    width:90%;
+    width:100%;
     max-width:700px;
-    max-height:80vh;
+    max-height:90vh;
     overflow-y:auto;
-     background: rgb(17,87,107);
-    box-shadow: 0 5px 15px rgba(84,173,229,.2);
+    padding:25px;
+    border-radius:15px;
+    background:rgb(17,87,107);
     color:#fff;
-    padding:30px;
-    border-radius:12px;
     position:relative;
-    box-shadow:0 0 25px cyan;
 }
 
 .about-modal h2{
@@ -516,6 +513,102 @@ header{
 .close-btn:hover{
     color:#0a688e;
 }
+@media (max-width:480px){
+
+    .modal-overlay{
+        padding:10px;
+        align-items:flex-start;
+        overflow-y:auto;
+    }
+
+    .about-modal{
+        margin-top:20px;
+        width:100%;
+        max-height:none;
+        padding:20px;
+    }
+
+    .about-modal h2{
+        font-size:28px;
+    }
+
+    .about-modal h3{
+        font-size:20px;
+    }
+
+    .about-modal p,
+    .about-modal li{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .close-btn{
+        top:10px;
+        right:15px;
+        font-size:24px;
+    }
+}
+
+ .btn-box{
+        display: inline-block;
+        padding: 12px 28px;
+        background:#0e506a;
+        border-radius: 40px;
+        font-size: 16px;
+        color:#fff;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 2s;
+        box-shadow: 0 0 5px #067baa,
+        0 0 25px #067baa;
+    }
+    .btn-box:hover{
+        box-shadow: 0 0 5px #059ad5,
+        0 0 25px #059ad5, 0 0 50px #059ad5,
+        0 0 100px #059ad5, 0 0 200px #059ad5;
+    }
+    @media (max-width: 768px) {
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-img img {
+        width: 280px;
+        max-width: 100%;
+        padding-bottom: 0;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+    }
+
+    .about-text h4 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .btn-box {
+        margin: auto;
+    }
+
+}
+
 #education{
         color: aliceblue;
         font-size: 20px;

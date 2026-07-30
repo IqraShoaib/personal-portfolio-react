@@ -13,9 +13,9 @@ function About() {
   animate={{ opacity: 1 }}
   transition={{ duration: 0.8 }}
 >
-    <div className="about" img>
+    <div className="about-img">
       <img 
-      src="images/profile.webp" alt="Iqra's profile" loading="lazy" width={500} height={500} />
+      src="images/profile.webp" alt="Iqra's profile" loading="lazy" />
     </div>
     <div tabIndex={-1} className="about-text">
       <h2>About<span> Me</span></h2>
@@ -88,8 +88,10 @@ function About() {
         <li>REST APIs</li>
       </ul>
       <h3>Courses:</h3>
-      <ul><li><h5>Pakistan Engineering Council
-       <h6>(In Collaboration with PakAngels, iCode guru and Aspire Pakistan)</h6> </h5></li>
+      <ul><li>
+  <h5>Pakistan Engineering Council</h5>
+  <h6>(In Collaboration with PakAngels, iCode Guru and Aspire Pakistan)</h6>
+</li>
      
 
 <ul><li><p> I have successfully completed the course on Generative Artificial Intelligence. This program has enhanced my understanding of AI models, prompt engineering, and real-world applications of generative technologies. Through hands-on exercises and projects, I gained practical experience in leveraging AI tools for creative problem-solving, content generation, and automation. This learning journey has strengthened my technical and analytical skills, and I look forward to applying this knowledge in future innovative projects.</p></li></ul>
