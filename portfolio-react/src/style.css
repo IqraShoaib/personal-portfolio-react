@@ -1301,6 +1301,15 @@ transform:scale(1);
     flex:2;
     color:#fff;
 }
+.project-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.project-info li {
+    margin: 8px 0;
+}
 
 .close{
     position:absolute;
@@ -1329,26 +1338,7 @@ transform:scale(1);
 .project-info h3{
     color:white;
 }
-@media (max-width: 768px) {
-  .project-modal ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
 
-  .project-modal li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin: 8px 0;
-  }
-
-  .project-modal li::before {
-    content: "•";
-    font-size: 18px;
-  }
-}
 
 @media(max-width:768px){
 
