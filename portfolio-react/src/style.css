@@ -1329,6 +1329,19 @@ transform:scale(1);
 .project-info h3{
     color:white;
 }
+@media (max-width: 768px) {
+  .project-modal ul {
+    list-style-position: inside;
+    padding-left: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .project-modal li {
+    text-align: center;
+    margin: 8px 0;
+  }
+}
 @media(max-width:768px){
 
 .projects-container{
