@@ -1167,16 +1167,58 @@ transform:scale(1);
     color:#fff;
 }
 .modal{
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 20px;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:9999;
 }
 
+.modal-content{
+    width:100%;
+    max-width:900px;
+    max-height:90vh;
+    overflow-y:auto;
+    background:#11576b;
+    border-radius:15px;
+    padding:30px;
+    position:relative;
+}
+
+.project-details{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+}
+
+.project-image{
+    flex:1;
+}
+
+.project-image img{
+    width:100%;
+    max-width:320px;
+    border-radius:12px;
+}
+
+.project-info{
+    flex:2;
+    color:#fff;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    background:none;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+}
 .modal-content{
     background: rgb(17,87,107);
     box-shadow: 0 5px 15px rgba(84,173,229,.2);
@@ -1193,54 +1235,6 @@ transform:scale(1);
 .project-info li,
 .project-info h3{
     color:white;
-}
-
-.close{
-    position:absolute;
-    top:8px;
-    right:10px;
-    font-size:20px;
-    cursor:pointer;
-}
-
-.project-details img{
-    width:300px;
-    border-radius:10px;
-}
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-.buttons a {
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-.project-details{
-    display:flex;
-    gap:25px;
-    align-items:flex-start;
-    margin-top:20px;
-}
-
-.project-image{
-    flex:1;
-}
-
-.project-image img{
-    width:100%;
-    max-width:300px;
-    border-radius:10px;
-}
-
-.project-info{
-    flex:1.5;
-    
-}
-
-.project-info h3{
-    margin:10px 0;
 }
 @media(max-width:768px){
 
@@ -1263,35 +1257,38 @@ margin:auto;
 }
 @media (max-width:768px){
 
-    .project-details{
-        flex-direction:column;
+    .modal{
+        padding:15px;
+        align-items:flex-start;
+        overflow-y:auto;
     }
 
-#modalImage{
+    .modal-content{
+        width:100%;
+        max-height:none;
+        margin-top:20px;
+        padding:20px;
+    }
+
+    .project-details{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .project-image img{
+        max-width:100%;
+    }
+
+    .project-info{
         width:100%;
     }
-}
-.demo-btn {
-     margin-top: 20px;
-        display: inline-block;
-        padding: 12px 28px;
-        background:#04506e;
-        border-radius: 40px;
-        font-size: 16px;
-        color: #ffffff;
-        letter-spacing: 1px;
-        text-decoration: none;
-        font-weight: 600;
-        opacity: 0;
-        animation: slideTop 1s ease forwards;
-        animation-delay: 2s;
-        box-shadow: 0 0 5px #067baa,
-        0 0 25px #067baa;
-}
-.demo-btn:hover{
-box-shadow: 0 0 5px #059ad5,
-        0 0 25px #059ad5, 0 0 50px #059ad5,
-        0 0 100px #059ad5, 0 0 200px #059ad5;
+
+    .close{
+        top:10px;
+        right:15px;
+        font-size:28px;
+    }
 }
 .github-btn {
      margin-top: 20px;

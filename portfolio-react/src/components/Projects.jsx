@@ -198,17 +198,7 @@ function Projects() {
           </p>
 
           <div className="buttons">
-            <motion.a
-  whileHover={{ scale: 1.08 }}
-  whileTap={{ scale: 0.95 }}
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="demo-btn"
-              onClick={(e) => e.stopPropagation()}
-            >
-              Live Demo
-            </motion.a>
+            
 
             <motion.a
   whileHover={{ scale: 1.08 }}
@@ -244,7 +234,6 @@ function Projects() {
       onClick={(e) => e.stopPropagation()}
       initial={{ scale: 0.8 }}
       animate={{ scale: 1 }}
-      transition={{ duration: 0.3 }}
     >
       <button
         className="close"
@@ -253,32 +242,44 @@ function Projects() {
         ×
       </button>
 
-      <h2>{selectedProject.name}</h2>
+      <div className="project-details">
 
-      <img
-        src={selectedProject.image}
-        alt={selectedProject.name}
-      />
+        <div className="project-image">
+          <img
+            src={selectedProject.image}
+            alt={selectedProject.name}
+          />
+        </div>
 
-      <p>{selectedProject.description}</p>
+        <div className="project-info">
 
-      <p>
-        <strong>Category:</strong> {selectedProject.category}
-      </p>
+          <h2>{selectedProject.name}</h2>
 
-      <h3>Technologies</h3>
-      <ul>
-        {(selectedProject.technology || []).map((tech, index) => (
-          <li key={index}>{tech}</li>
-        ))}
-      </ul>
+          <p>{selectedProject.description}</p>
 
-      <h3>Features</h3>
-      <ul>
-        {(selectedProject.features || []).map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
-      </ul>
+          <p>
+            <strong>Category:</strong> {selectedProject.category}
+          </p>
+
+          <h3>Technologies</h3>
+
+          <ul>
+            {selectedProject.technology.map((tech, index) => (
+              <li key={index}>{tech}</li>
+            ))}
+          </ul>
+
+          <h3>Features</h3>
+
+          <ul>
+            {selectedProject.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+
+        </div>
+
+      </div>
     </motion.div>
   </motion.div>
 )}
