@@ -71,7 +71,6 @@ header{
     z-index:1000;
     box-sizing:border-box;
 }
-
 .logo{
     font-size:22px;
 }
@@ -263,7 +262,7 @@ header{
     align-items:center;
 }
 }
-    .home {
+.home {
         color: aliceblue;
         position:relative;
         width: 100%;
@@ -344,7 +343,7 @@ header{
         background:#0e506a;
         border-radius: 40px;
         font-size: 16px;
-        color:#a1b9c3;
+        color:#fff;
         letter-spacing: 1px;
         text-decoration: none;
         font-weight: 600;
@@ -515,7 +514,7 @@ header{
 .close-btn:hover{
     color:#0a688e;
 }
-    #education{
+#education{
         color: aliceblue;
         font-size: 20px;
         line-height: 1.4;
@@ -529,15 +528,32 @@ header{
     .sub-title span{
     color: #1aabe4;
     }
-    .container{
+ .education-container{
+    display:flex;
+    grid-template-columns: repeat(3, fr);
+    gap:20px;
         padding: 100px;
     }
-    .education-list {
-        display: flex;
-        grid-template-columns: repeat(auto-fit, minmax(259px,1fr));
-        grid-gap: 40px;
-        margin-top: 50px;
+    @media (max-width: 768px) {
+        .education-container {
+            grid-template-columns:  1fr;
+            padding: 50px;
+        }
     }
+
+    .education-list{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+@media(max-width:768px){
+
+.education-list{
+grid-template-columns:1fr;
+}
+
+}
     .education-list div{
         background-color: transparent;
         padding: 40px;
@@ -1258,6 +1274,25 @@ transform:scale(1);
 
 .project-info h3{
     margin:10px 0;
+}
+@media(max-width:768px){
+
+.projects-container{
+
+grid-template-columns:1fr;
+
+}
+
+.project-card{
+
+width:100%;
+
+max-width:340px;
+
+margin:auto;
+
+}
+
 }
 @media (max-width:768px){
 
