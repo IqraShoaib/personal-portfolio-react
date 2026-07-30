@@ -13,11 +13,7 @@
         transition: 0.3s;
         font-size: 14px;
     }
-    @media (max-width:768px){
-    body{
-        background:red !important;
-    }
-}
+   
     @media (min-width: 768px) {
         body{
             font-size: 16px;
