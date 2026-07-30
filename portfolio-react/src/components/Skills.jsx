@@ -91,7 +91,10 @@ function Skills() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <svg viewBox="0 0 200 200">
+        <svg
+    viewBox="0 0 200 200"
+    preserveAspectRatio="xMidYMid meet"
+>
           <circle
             className="progress-bar"
             cx="100"
