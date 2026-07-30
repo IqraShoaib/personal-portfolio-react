@@ -83,42 +83,33 @@ function Skills() {
     transition={{ duration: 0.6 }}
   >
     {professionalSkills.map((skill) => (
-      <motion.div
-        className="radial-bar"
-        key={skill.id}
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <svg
-    viewBox="0 0 200 200"
-    preserveAspectRatio="xMidYMid meet"
->
-          <circle
-            className="progress-bar"
-            cx="100"
-            cy="100"
-            r="80"
-          />
+      <motion.div className="radial-bar" key={skill.id}>
+  <div className="circle">
+    <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+      <circle
+        className="progress-bar"
+        cx="100"
+        cy="100"
+        r="80"
+      />
 
-          <circle
-            className={`path ${skill.pathClass}`}
-            cx="100"
-            cy="100"
-            r="80"
-          />
-        </svg>
+      <circle
+        className={`path ${skill.pathClass}`}
+        cx="100"
+        cy="100"
+        r="80"
+      />
+    </svg>
 
-        <div className="percentage">
-          {skill.percentage}%
-        </div>
+    <div className="percentage">
+      {skill.percentage}%
+    </div>
+  </div>
 
-        <h3 className="skill-name">
-          {skill.name}
-        </h3>
-
-      </motion.div>
+  <h3 className="skill-name">
+    {skill.name}
+  </h3>
+</motion.div>
     ))}
   </motion.div>
 </div>
