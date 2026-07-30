@@ -1331,17 +1331,25 @@ transform:scale(1);
 }
 @media (max-width: 768px) {
   .project-modal ul {
-    list-style-position: inside;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
-    text-align: center;
+    list-style: none;
   }
 
   .project-modal li {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     margin: 8px 0;
   }
+
+  .project-modal li::before {
+    content: "•";
+    font-size: 18px;
+  }
 }
+
 @media(max-width:768px){
 
 .projects-container{
