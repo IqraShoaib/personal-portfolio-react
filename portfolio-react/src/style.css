@@ -866,12 +866,10 @@ transform:scale(1);
         animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
         transform: scaleX(0);
         transform-origin: left;
-        overflow: hidden;  
-        left: 0;
-    top: 0;
+       
+        
 
     }
-   
     .progress-line span::after{
         position: absolute;
         padding: 1px 8px;
@@ -916,8 +914,8 @@ transform:scale(1);
         animation: showText 0.5s 1.5s linear forwards;
         opacity: 0;
     }
-
     
+
     @media screen and (max-width: 600px) {
         .nav.responsive {position: relative;}
         .nav.responsive a.icon {
@@ -943,8 +941,6 @@ transform:scale(1);
     
     width:100%;
 }
-
-
 .skill-name{
     margin-top:18px;
     text-align:center;
