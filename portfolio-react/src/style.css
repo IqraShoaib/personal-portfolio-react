@@ -868,24 +868,7 @@ transform:scale(1);
         transform-origin: left;
 
     }
-    .progress-line.html span{
-        width: 90%;
-    }
-    .progress-line.css span{
-        width: 70%;
-    }
-    .progress-line.javascript span{
-        width: 50%;
-    }
-    .progress-line.bootstrap span{
-        width: 70%;
-    }
-    .progress-line.python span{
-        width: 65%;
-    }
-    .progress-line.react span{
-        width: 60%;
-    }
+   
     .progress-line span::after{
         position: absolute;
         padding: 1px 8px;
@@ -954,7 +937,7 @@ transform:scale(1);
     display:grid;
     grid-template-columns:repeat(2,minmax(150px,1fr));
     gap:30px;
-    justify-items:center;
+    
     width:100%;
 }
 
@@ -1092,14 +1075,6 @@ transform:scale(1);
     }
 
 }
-.container1{
-    flex:1;
-    min-width:320px;
-    max-width:600px;
-    display:flex;
-    flex-direction:column;
-}
-
 
 #project{
     justify-content: center;
