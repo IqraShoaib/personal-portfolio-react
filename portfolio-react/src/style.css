@@ -863,9 +863,9 @@ transform:scale(1);
         background-color:#059ad5;
         position:absolute;
         border-radius: 10px;
-        animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
-        transform: scaleX(0);
-        transform-origin: left;
+        overflow: hidden;  
+        left: 0;
+    top: 0;
 
     }
    
