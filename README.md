@@ -140,7 +140,7 @@ Add your deployed portfolio link here.
 
 Example:
 
-https://your-portfolio.vercel.app
+https://iqra-nisar.vercel.app/
 
 ---
 
@@ -241,6 +241,8 @@ Frontend Developer
 GitHub: https://github.com/IqraShoaib
 
 LinkedIn: https://www.linkedin.com/in/iqra-nisar-93656b221
+
+Public URL: https://personal-portfolio-react-7epa-pi.vercel.app/
 
 ---
 
