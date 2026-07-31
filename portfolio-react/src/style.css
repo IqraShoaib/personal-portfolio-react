@@ -789,12 +789,28 @@ transform:scale(1);
     max-width: 600px;
 }
     .skills-container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
-    flex-wrap: wrap;
-    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:60px;
+    flex-wrap:wrap;
+    width:100%;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+@media (max-width: 768px){
+
+    .skills-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .container1{
+        width: 100%;
+        max-width: 600px;
+    }
+
 }
     .heading1{
         text-align: center;
@@ -835,6 +851,81 @@ transform:scale(1);
         transform-origin: left;
         
     }
+    /* =========================
+   Tablet (768px and below)
+========================= */
+@media (max-width: 768px) {
+
+  .container1{
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .heading1{
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  .bar{
+    margin-bottom: 25px;
+  }
+
+  .skill-header i{
+    font-size: 22px;
+  }
+
+  .skill-header span{
+    font-size: 17px;
+  }
+
+  .progress-line{
+    height: 6px;
+  }
+
+}
+/* =========================
+   Mobile (480px and below)
+========================= */
+@media (max-width: 480px) {
+
+  .container1{
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .heading1{
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .bar{
+    margin-bottom: 20px;
+  }
+
+  .skill-header{
+    gap: 8px;
+  }
+
+  .skill-header i{
+    font-size: 20px;
+  }
+
+  .skill-header span{
+    font-size: 16px;
+  }
+
+  .progress-line{
+    height: 5px;
+  }
+
+  .bar > div:last-child{
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: right;
+  }
+
+}
     
     .skill-header{
     display:flex;
