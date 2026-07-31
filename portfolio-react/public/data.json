@@ -98,8 +98,7 @@
   ],
   "image": "/images/landing-page.webp",
   "description": "A responsive landing page...",
-  "github": "...",
-  "demo": "#"
+  "github": "https://github.com/IqraShoaib/Responsive-Landing-Page"
 },
   {
   "id": 2,
@@ -115,8 +114,8 @@
   ],
   "image": "/images/stopwatch.webp",
   "description": "StopWatch Web Application...",
-  "github": "...",
-  "demo": "#"
+  "github": "https://github.com/IqraShoaib/StopWatch-Web-Application"
+  
 },
   {
   "id": 3,
@@ -130,8 +129,8 @@
   ],
   "image": "/images/game.webp",
   "description": "Tic Tac Toe Game...",
-  "github": "...",
-  "demo": "#"
+  "github": "https://github.com/IqraShoaib/Tic-Tac-Toe-Game"
+  
 },
   {
   "id": 4,
@@ -145,8 +144,7 @@
   ],
   "image": "/images/weather.webp",
   "description": "Weather Application...",
-  "github": "...",
-  "demo": "#"
+  "github": "https://github.com/IqraShoaib/Weather-Application"
 }
 
 ],

@@ -147,8 +147,8 @@ header{
         justify-content:center;
         align-items:center;
         position:relative;
-        width:45px;
-        height:20px;
+        width: 50px;
+        height:25px;
     }
     .toggle input {
     position: sticky;
@@ -1806,6 +1806,8 @@ section {
 @media (max-width: 768px) {
   section {
     padding: 60px 15px;
+    text-align: center;
+    align-items: center;
   }
 }
 :focus-visible {

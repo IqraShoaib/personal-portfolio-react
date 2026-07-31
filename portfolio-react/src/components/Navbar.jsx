@@ -39,7 +39,6 @@ function Navbar() {
       <button
   className="hamburger"
   onClick={() => {
-    alert("clicked");
     setMenuOpen(prev => !prev);
   }}
 >
